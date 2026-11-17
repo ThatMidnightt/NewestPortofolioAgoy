@@ -1,0 +1,219 @@
+/* ============================================================
+   Nalendra Yoga — Email form page
+   Warm minimalist design system (selaras dengan style.css)
+   ============================================================ */
+
+:root {
+  --bg: #f6f3ec;
+  --surface: #fcfaf6;
+  --ink: #1a1712;
+  --muted: #6f6a5e;
+  --line: #e4dfd3;
+  --accent: #a94720;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.page {
+  width: min(540px, 100%);
+}
+
+/* ---------- Back link ---------- */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: var(--ink);
+}
+
+/* ---------- Card ---------- */
+.card {
+  padding: clamp(1.6rem, 5vw, 2.6rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+h1 {
+  margin: 0.9rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 7vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+h1 .accent {
+  color: var(--accent);
+}
+
+.sub {
+  max-width: 46ch;
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- Form ---------- */
+form {
+  display: grid;
+  gap: 1.1rem;
+  margin-top: 1.8rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a6a093;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(169, 71, 32, 0.12);
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* Honeypot — disembunyikan dari manusia, tetap terlihat oleh bot */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.9rem 1.4rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--ink);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.submit:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.alt {
+  margin: 1.4rem 0 0;
+  font-size: 0.82rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.alt a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.alt a:hover {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submit:hover {
+    transform: none;
+  }
+}
